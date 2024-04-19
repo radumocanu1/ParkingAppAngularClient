@@ -1,7 +1,7 @@
 import {UUID} from "crypto";
 
 export class UserDTO {
-  uuid!: UUID;
+  userUUID!: UUID;
   username!: string;
   email!: string;
 }

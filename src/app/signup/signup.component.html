@@ -1,5 +1,8 @@
 <div class="card my-5">
   <div class="card-body">
+    <div *ngIf="errorMessage">
+      Error: {{ errorMessage }}
+    </div>
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
       <div class="form-group">
         <label for="name">Name</label>
@@ -36,4 +39,11 @@
     </form>
   </div>
 </div>
+<div class="auth-container">
+  <a routerLink="/logare" class="auth-button">
+    Ai deja cont? Autentifică-te aici!
+  </a>
+
+</div>
+
 

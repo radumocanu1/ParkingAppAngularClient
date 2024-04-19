@@ -5,16 +5,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
-import { UserFormComponent } from './user-form/user-form.component';
+import { SignupComponent } from './signup/signup.component';
 import { UserService } from './service/user-service.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
-    UserFormComponent,
-    NavbarComponent
+    SignupComponent,
+    NavbarComponent,
+    LoginComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

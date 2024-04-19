@@ -9,8 +9,8 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.uuid }}</td>
+      <tr *ngFor="let user of users" [routerLink]="['/profil/', user.userUUID]">
+        <td>{{ user.userUUID }}</td>
         <td>{{ user.username }}</td>
         <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
       </tr>
