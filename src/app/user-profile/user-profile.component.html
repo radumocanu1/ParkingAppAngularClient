@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="profile">
+    <div class="profile-image">
+      <img src="assets/template_profile_picture.png" alt="Imagine profil">
+    </div>
+    <div class="profile-info">
+      <h2>{{ user.username }}</h2>
+      <div *ngIf="user.trusted" class="verified-badge">Verificat</div>
+      <div *ngIf="!user.trusted" class="unverified-badge">Neconfirmat</div>
+      <div class="rating">Rating: {{ user.rating }}</div>
+      <div *ngIf="user.feedbackList.length > 0; else noFeedbacks" class="feedbacks">
+        <h3>Feedback-uri:</h3>
+        <ul>
+          <li *ngFor="let feedback of user.feedbackList">{{ feedback.message }}</li>
+        </ul>
+      </div>
+      <ng-template #noFeedbacks>
+        <p>Nu există feedback-uri disponibile.</p>
+      </ng-template>
+      <button (click)="sendMessage()">Trimite Mesaj</button>
+    </div>
+  </div>
+</div>
