@@ -10,6 +10,11 @@ import { UserService } from './service/user-service.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { MatCardModule } from '@angular/material/card';
+import {MatButton, MatIconButton} from "@angular/material/button";
+import { MatIconModule } from '@angular/material/icon';
+import { ReCaptchaV3Service } from 'ngx-captcha';
+
 
 @NgModule({
   declarations: [
@@ -18,15 +23,19 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     SignupComponent,
     NavbarComponent,
     LoginComponent,
-    UserProfileComponent
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatIconModule,
+    MatIconButton,
+    MatButton,
   ],
-  providers: [UserService],
+  providers: [UserService, ReCaptchaV3Service],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // This is the change you need to make
 })

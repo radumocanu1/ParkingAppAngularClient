@@ -3,8 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { UserDTO } from '../model/userDTO';
 import { Observable, catchError, throwError } from 'rxjs';
 import {User} from "../model/user";
-import {UUID} from "crypto";
-import {UserProfileView} from "../model/userProfile/UserProfileView";
+import {UserProfileView} from "../model/UserProfileView";
 
 @Injectable()
 export class UserService {
@@ -25,5 +24,8 @@ export class UserService {
   }
   public getUser(userUUID: string | null)  : Observable<UserProfileView> {
     return this.http.get<UserProfileView>(`${this.userUrl}/${userUUID}`);
+  }
+  public getProfilePicturePath(userUUID: string | null)  : Observable<string> {
+    return this.http.get(`${this.userUrl}/profilePic/${userUUID}`, { responseType: 'text' });
   }
 }
