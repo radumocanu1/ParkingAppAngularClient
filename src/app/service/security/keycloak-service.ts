@@ -17,9 +17,9 @@ export class KeycloakService {
   get keycloak() {
     if (!this._keycloak) {
       this._keycloak = new Keycloak({
-        url: "http://localhost:8080",
-        realm: "StaiParcat",
-        clientId: "staiParcatClientID",
+        url: "http://localhost:8081",
+        realm: "Parco",
+        clientId: "testClientID",
       });
     }
     return this._keycloak;
@@ -32,7 +32,7 @@ export class KeycloakService {
       silentCheckSsoRedirectUri:
         window.location.origin + "/assets/silent-check-sso.html",
     });
-
+    console.log(authenticated)
     if (!authenticated) {
       return authenticated;
     }
