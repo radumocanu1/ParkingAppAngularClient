@@ -1,7 +1,7 @@
 // login.component.ts
 import {Component, inject} from '@angular/core';
-import {SecurityStore} from "../service/security/security-store";
-import {User} from "../service/security/models";
+import {User} from "../model/user";
+import {SecurityStore} from "../security/security-store";
 
 @Component({
   selector: 'app-login',

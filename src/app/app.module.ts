@@ -14,7 +14,8 @@ import { MatCardModule } from '@angular/material/card';
 import {MatButton, MatIconButton} from "@angular/material/button";
 import { MatIconModule } from '@angular/material/icon';
 import { ReCaptchaV3Service } from 'ngx-captcha';
-import {SecurityInterceptor} from "./service/security/security-interceptor";
+import {InterceptorModule} from "./security/interceptor-module";
+import {ErrorInterceptorModule} from "./security/error-interceptor-module";
 
 
 @NgModule({
@@ -35,13 +36,10 @@ import {SecurityInterceptor} from "./service/security/security-interceptor";
     MatIconModule,
     MatIconButton,
     MatButton,
+    InterceptorModule,
+    ErrorInterceptorModule
   ],
-  providers: [UserService, ReCaptchaV3Service,
-  {
-    provide: HTTP_INTERCEPTORS,
-    useClass: SecurityInterceptor,
-    multi: true
-  }],
+  providers: [UserService, ReCaptchaV3Service],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // This is the change you need to make
 })
