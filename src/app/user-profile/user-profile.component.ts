@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {UUID} from "crypto";
 import {UserService} from "../service/user-service.service";
 import {UserProfileView} from "../model/UserProfileView";
 import {Feedback} from "../model/Feedback";

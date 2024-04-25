@@ -13,28 +13,17 @@ import { isPlatformServer } from '@angular/common';
 export class SecurityStore {
   #keycloakService = inject(KeycloakService);
 
-  loaded = signal(false);
-  user = signal<User | undefined>(undefined);
 
-  loadedUser = computed(() => (this.loaded() ? this.user() : undefined));
-  signedIn = computed(() => this.loaded() && !this.user()?.anonymous);
-
+  isLoggedIn:any
   constructor() {
     this.onInit();
   }
 
   async onInit() {
-    const isServer = isPlatformServer(inject(PLATFORM_ID));
     const keycloakService = inject(KeycloakService);
-    if (isServer) {
-      this.user.set(ANONYMOUS_USER);
-      this.loaded.set(true);
-      return;
-    }
-
-    const isLoggedIn = await keycloakService.init();
-    if (isLoggedIn && keycloakService.profile) {
-      const { sub, email, given_name, family_name, token } =
+    this.isLoggedIn = await keycloakService.init();
+    if (this.isLoggedIn && keycloakService.profile) {
+      const {sub, email, given_name, family_name, token} =
         keycloakService.profile;
       const user = {
         id: sub,
@@ -43,11 +32,6 @@ export class SecurityStore {
         anonymous: false,
         bearer: token,
       };
-      this.user.set(user);
-      this.loaded.set(true);
-    } else {
-      this.user.set(ANONYMOUS_USER);
-      this.loaded.set(true);
     }
   }
 

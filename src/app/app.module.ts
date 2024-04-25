@@ -11,11 +11,17 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MatCardModule } from '@angular/material/card';
-import {MatButton, MatIconButton} from "@angular/material/button";
+import {MatButton, MatButtonModule, MatIconButton} from "@angular/material/button";
 import { MatIconModule } from '@angular/material/icon';
 import { ReCaptchaV3Service } from 'ngx-captcha';
 import {InterceptorModule} from "./security/interceptor-module";
 import {ErrorInterceptorModule} from "./security/error-interceptor-module";
+import { ListingComponent } from './listing/listing.component';
+import { ListingListComponent } from './listing-list/listing-list.component';
+import {GoogleMapsModule} from "@angular/google-maps";
+import { ProfileDropdownComponent } from './profile-dropdown/profile-dropdown.component';
+import {MatMenuModule} from "@angular/material/menu";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -26,6 +32,9 @@ import {ErrorInterceptorModule} from "./security/error-interceptor-module";
     NavbarComponent,
     LoginComponent,
     UserProfileComponent,
+    ListingComponent,
+    ListingListComponent,
+    ProfileDropdownComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +46,11 @@ import {ErrorInterceptorModule} from "./security/error-interceptor-module";
     MatIconButton,
     MatButton,
     InterceptorModule,
-    ErrorInterceptorModule
+    ErrorInterceptorModule,
+    GoogleMapsModule,
+    MatMenuModule,
+    MatButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [UserService, ReCaptchaV3Service],
   bootstrap: [AppComponent],

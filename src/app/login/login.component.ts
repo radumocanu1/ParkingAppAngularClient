@@ -15,9 +15,6 @@ export class LoginComponent {
   user: User | undefined
   securityStore = inject(SecurityStore)
 
-  login() {
-    // Adăugați aici logica pentru procesul de autentificare
-  }
 
   onCaptchaVerify(response: string) {
     this.isHuman = true; // sau folosește logica suplimentară pentru a verifica răspunsul reCAPTCHA

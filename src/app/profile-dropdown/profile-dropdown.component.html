@@ -1,0 +1,39 @@
+<!--<div class="navbar" (click)="toggleDropdown()">-->
+<!--  <img src="./assets/template_profile_picture.png" alt="Profile Picture" class="profile-picture">-->
+<!--  <mat-icon class="menu-icon">more_vert</mat-icon>-->
+<!--  <div class="dropdown" *ngIf="isDropdownOpen">-->
+<!--    <button mat-button>Profilul meu</button>-->
+<!--    <button mat-button>Feedbackuri primite</button>-->
+<!--    <button mat-button>Mesaje</button>-->
+<!--    <button mat-button>Adauga un anunt</button>-->
+<!--    <button mat-button>Invita un prieten</button>-->
+<!--    <button mat-button (click)="securityStore.signOut()" *ngIf="securityStore.isLoggedIn">Deconecteaza-te</button>-->
+<!--    <button mat-button (click)="securityStore.signIn()" *ngIf="!securityStore.isLoggedIn">Conecteaza-te</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+  <!-- Butonul meniului în partea dreaptă -->
+<div>
+    <img src="./assets/template_profile_picture.png" alt="Profile Picture" class="profile-picture">
+    <button mat-icon-button [matMenuTriggerFor]="menu" >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu  #menu="matMenu" yPosition="below">
+      <button mat-menu-item class="menu-item">
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled class="menu-item">
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item class="menu-item">
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+
+
+</div>
+
+

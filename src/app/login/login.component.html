@@ -1,16 +1,4 @@
 <div class="login-container">
-  <h2>Autentificare</h2>
-  <form (ngSubmit)="login()">
-    <div class="form-group">
-      <label for="usernameOrEmail">Username/Email:</label>
-      <input type="text" id="usernameOrEmail" name="usernameOrEmail" [(ngModel)]="usernameOrEmail" required>
-    </div>
-    <div class="form-group">
-      <label for="password">Parolă:</label>
-      <input type="password" id="password" name="password" [(ngModel)]="password" required>
-    </div>
-    <button type="submit" [disabled]="!isHuman">Autentificare</button>
-  </form>
   <div class="security">
       <button
         data-testid="btn-sign-in"
@@ -20,7 +8,7 @@
         Sign In
       </button>
   </div>
-  <div class="security">
+  <div class="security" *ngIf="securityStore.isLoggedIn">
     <button
       data-testid="btn-sign-in"
       mat-raised-button
@@ -29,6 +17,7 @@
       Sign Out
     </button>
   </div>
+
 </div>
 
 
