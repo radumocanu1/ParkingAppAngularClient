@@ -8,7 +8,6 @@ import { UserListComponent } from './user-list/user-list.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserService } from './service/user-service.service';
 import { NavbarComponent } from './navbar/navbar.component';
-import { LoginComponent } from './login/login.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MatCardModule } from '@angular/material/card';
 import {MatButton, MatButtonModule, MatIconButton} from "@angular/material/button";
@@ -20,8 +19,9 @@ import { ListingComponent } from './listing/listing.component';
 import { ListingListComponent } from './listing-list/listing-list.component';
 import {GoogleMapsModule} from "@angular/google-maps";
 import { ProfileDropdownComponent } from './profile-dropdown/profile-dropdown.component';
-import {MatMenuModule} from "@angular/material/menu";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatMenu, MatMenuModule, MatMenuTrigger} from "@angular/material/menu";
+
 
 
 @NgModule({
@@ -29,12 +29,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     AppComponent,
     UserListComponent,
     SignupComponent,
-    NavbarComponent,
-    LoginComponent,
     UserProfileComponent,
     ListingComponent,
     ListingListComponent,
     ProfileDropdownComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,17 +42,19 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     FormsModule,
     MatCardModule,
     MatIconModule,
-    MatIconButton,
-    MatButton,
     InterceptorModule,
     ErrorInterceptorModule,
     GoogleMapsModule,
-    MatMenuModule,
+    BrowserAnimationsModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    MatMenuModule
+
   ],
   providers: [UserService, ReCaptchaV3Service],
   bootstrap: [AppComponent],
+  exports: [
+    ProfileDropdownComponent
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // This is the change you need to make
 })
 export class AppModule { }

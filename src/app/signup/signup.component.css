@@ -1,21 +1,4 @@
-.auth-container {
-  display: flex;
-  justify-content: flex-end; /* Aliniaza butonul la dreapta */
-  margin-top: 20px; /* Adaugăm un spațiu de sus pentru a fi mai vizibil */
-}
-
-.auth-button {
-  display: inline-block;
-  padding: 15px 30px; /* Ajustăm dimensiunea butonului */
-  background-color: #3498db;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px; /* Butonul mai rotunjit */
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.auth-button:hover {
-  background-color: #2980b9;
+.A{
+  margin-left: 30%;
+  margin-top: 20%;
 }

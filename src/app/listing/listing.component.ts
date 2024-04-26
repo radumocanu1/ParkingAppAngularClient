@@ -26,7 +26,9 @@ export class ListingComponent implements OnInit {
   initializeMap(): void {
     this.mapOptions = {
       center: { lat: parseFloat(this.listing.latitude), lng: parseFloat(this.listing.longitude) },
-      zoom: 14
+      zoom: 18,
+      mapTypeId: 'satellite',
+
     };
     this.marker = {
       position: { lat: parseFloat(this.listing.latitude), lng: parseFloat(this.listing.longitude) },
