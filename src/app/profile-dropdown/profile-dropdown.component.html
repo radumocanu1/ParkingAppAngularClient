@@ -2,20 +2,20 @@
   <img src="./assets/template_profile_picture.png" alt="Profile Picture" class="profile-picture">
   <mat-icon class="menu-icon">more_vert</mat-icon>
   <div class="dropdown-content" *ngIf="isDropdownOpen">
-    <div *ngIf="securityStore.isLoggedIn">
+<!--    <div *ngIf="securityStore.isLoggedIn">-->
     <button mat-button routerLink="/profilul_meu"><mat-icon>person</mat-icon>Profilul meu</button>
       <button mat-button > <mat-icon>add_box</mat-icon>Adauga un anunt</button>
       <button mat-button> <mat-icon>home</mat-icon>Feedbackuri primite</button>
     <button mat-button><mat-icon>message</mat-icon>Mesaje</button>
     <button mat-button><mat-icon>person_add</mat-icon>Invita un prieten</button>
-    </div>
-    <div *ngIf="!securityStore.isLoggedIn">
-      <button mat-button (click)="securityStore.signIn()">Conecteaza-te</button>
+<!--    </div>-->
+<!--    <div *ngIf="!securityStore.isLoggedIn">-->
+      <button mat-button (click)="login()">Conecteaza-te</button>
       <button mat-button><mat-icon>lock</mat-icon> Adauga un anunt</button>
     </div>
     <button mat-button> <mat-icon>report_problem</mat-icon>Raporteaza un abuz</button>
-    <button mat-button (click)="securityStore.signOut()" *ngIf="securityStore.isLoggedIn">Deconecteaza-te</button>
-  </div>
+    <button mat-button (click)="logout()" >Deconecteaza-te</button>
+<!--</div>-->
 
 </div>
 

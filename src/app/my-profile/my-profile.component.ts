@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MyProfile} from "../model/MyProfile";
 import {UserService} from "../service/user-service.service";
-import {KeycloakService} from "../security/keycloak-service";
 
 @Component({
   selector: 'app-my-profile',
@@ -11,7 +10,7 @@ import {KeycloakService} from "../security/keycloak-service";
 export class MyProfileComponent implements OnInit{
   myProfile: MyProfile = new MyProfile();
 
-  constructor(private userService: UserService, private keycloakService: KeycloakService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.getUserProfile();
