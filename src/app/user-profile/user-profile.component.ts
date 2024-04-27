@@ -22,7 +22,6 @@ export class UserProfileComponent implements OnInit {
       this.userService.getUser(params.get('userId')).subscribe(
         (data: UserProfileView) => {
           this.user = data;
-          console.log(this.user);
           this.updateFeedbackProfilePictures();
         }
       );

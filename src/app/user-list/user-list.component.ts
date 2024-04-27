@@ -18,6 +18,5 @@ export class UserListComponent implements OnInit {
     this.userService.findAll().subscribe((data: UserDTO[]) => {
       this.users = data;
     })
-    console.log(this.users);
-  }
+    }
 }

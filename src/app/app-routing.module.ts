@@ -5,6 +5,7 @@ import { SignupComponent } from './signup/signup.component';
 import {UserProfileComponent} from "./user-profile/user-profile.component";
 import {ListingComponent} from "./listing/listing.component";
 import {ListingListComponent} from "./listing-list/listing-list.component";
+import {MyProfileComponent} from "./my-profile/my-profile.component";
 
 const routes: Routes = [
   { path: 'users', component: UserListComponent },
@@ -12,6 +13,8 @@ const routes: Routes = [
   { path: 'profil/:userId', component: UserProfileComponent },
   { path: 'anunt/:listingId', component: ListingComponent },
   { path: 'anunturi', component: ListingListComponent },
+  { path: 'profilul_meu', component: MyProfileComponent },
+
 ];
 
 @NgModule({

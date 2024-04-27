@@ -3,12 +3,11 @@
   <mat-icon class="menu-icon">more_vert</mat-icon>
   <div class="dropdown-content" *ngIf="isDropdownOpen">
     <div *ngIf="securityStore.isLoggedIn">
-    <button mat-button><mat-icon>person</mat-icon>Profilul meu</button>
+    <button mat-button routerLink="/profilul_meu"><mat-icon>person</mat-icon>Profilul meu</button>
       <button mat-button > <mat-icon>add_box</mat-icon>Adauga un anunt</button>
       <button mat-button> <mat-icon>home</mat-icon>Feedbackuri primite</button>
     <button mat-button><mat-icon>message</mat-icon>Mesaje</button>
     <button mat-button><mat-icon>person_add</mat-icon>Invita un prieten</button>
-    <button mat-button (click)="securityStore.signIn()" *ngIf="!securityStore.isLoggedIn">Conecteaza-te</button>
     </div>
     <div *ngIf="!securityStore.isLoggedIn">
       <button mat-button (click)="securityStore.signIn()">Conecteaza-te</button>

@@ -21,6 +21,7 @@ import {GoogleMapsModule} from "@angular/google-maps";
 import { ProfileDropdownComponent } from './profile-dropdown/profile-dropdown.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatMenu, MatMenuModule, MatMenuTrigger} from "@angular/material/menu";
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 
 
@@ -34,6 +35,7 @@ import {MatMenu, MatMenuModule, MatMenuTrigger} from "@angular/material/menu";
     ListingListComponent,
     ProfileDropdownComponent,
     NavbarComponent,
+    MyProfileComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { UserDTO } from '../model/userDTO';
 import { Observable, catchError, throwError } from 'rxjs';
 import {User} from "../model/user";
 import {UserProfileView} from "../model/UserProfileView";
+import {MyProfile} from "../model/MyProfile";
 
 @Injectable()
 export class UserService {
@@ -27,5 +28,19 @@ export class UserService {
   }
   public getProfilePicturePath(userUUID: string | null)  : Observable<string> {
     return this.http.get(`${this.userUrl}/profilePic/${userUUID}`, { responseType: 'text' });
+  }
+  getUserProfile(): Observable<MyProfile> {
+    return this.http.get<MyProfile>(`${this.userUrl}/profile`).pipe(
+      catchError((error: HttpErrorResponse) => {
+        if (error.status === 404) {
+          return this.createUser();
+        }
+        throw(error);
+      })
+    );
+  }
+
+  private createUser(): Observable<MyProfile> {
+    return this.http.post<MyProfile>(this.userUrl, {});
   }
 }

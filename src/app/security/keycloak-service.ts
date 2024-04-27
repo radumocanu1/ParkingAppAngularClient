@@ -32,7 +32,6 @@ export class KeycloakService {
       silentCheckSsoRedirectUri:
         window.location.origin + "/assets/silent-check-sso.html",
     });
-    console.log(authenticated)
     if (!authenticated) {
       return authenticated;
     }
@@ -40,12 +39,11 @@ export class KeycloakService {
       (await this.keycloak.loadUserInfo()) as unknown as UserProfile;
     this.profile.token = this.keycloak.token || "";
     console.log(this.profile);
-
     return true;
   }
 
   login() {
-    return this.keycloak.login();
+    return this.keycloak.login({redirectUri:"http://localhost:4200/store_token_endpoint"})
   }
 
   logout() {
